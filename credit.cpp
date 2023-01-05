@@ -1,5 +1,7 @@
 #include "credit.h"
 
+using namespace std;
+
 CreditCard::CreditCard(const std::string& no, const std::string& nm, int lim, double bal=0) {
     number = no;
     name = nm;
@@ -19,7 +21,7 @@ void CreditCard::makePayment(double payment) {
     balance -= payment;
 }
 
-std::ostream& CreditCard::operator<<(std::ostream& out, const CreditCard& c) {
+std::ostream& operator<<(std::ostream& out, const CreditCard& c) {
     out << "Number = " << c.getNumber() << "\n" << "Name = " << c.getName() << "\n" << "Balance = " << c.getBalance() << "\n" << "Limit = " << c.getLimit() << "\n";
     return out;
 }
